@@ -1,0 +1,58 @@
+{
+	"parameters": [
+	
+		{
+			"name": "qr",
+			"type": "String",
+			"validation":[],
+			"nullable":false
+		},
+		{
+			"name": "a",
+			"type": "String",
+			"validation":[],
+			"nullable":false
+		},
+		{
+			"name": "time",
+			"type": "Date",
+			"validation":[],
+			"nullable":false
+		},
+		{
+			"name": "product",
+			"type": "String",
+			"validation":[],
+			"nullable":false
+		},
+		{
+			"name": "shgarea",
+			"type": "String",
+			"validation":[],
+			"nullable":false
+		},
+		{
+			"name": "farmername",
+			"type": "String",
+			"validation":[],
+			"nullable":false
+		}
+		
+	],
+	"functions": [
+		{
+			"params": [
+			    "qr",
+			    "a",
+			    "shgarea",
+			    "product",
+			    "farmername",
+			    "time"
+			   		
+			],
+			"class": "com.brandanswers.dashboard.funson.PalliyakalManager",
+			"name": "insertQR",
+			"db": "insertQR"
+		}
+	]
+}

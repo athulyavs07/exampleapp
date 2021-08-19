@@ -1,0 +1,13 @@
+{
+	"parameters": [
+		
+	],
+	"functions": [
+
+		{
+			"class": "com.brandanswers.dashboard.funson.PalliyakalManager",
+			"name": "uploadFile",
+			"db":"uploadFile"
+		}
+	]
+}

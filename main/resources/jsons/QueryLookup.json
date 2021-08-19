@@ -1,0 +1,184 @@
+{
+	"getUser": {
+		"parameters": [
+			{
+				"name": "username",
+				"type": "String"
+			}
+		],
+		"query": "SELECT * FROM userdata where user_name = ?"
+	},
+	"updateToken": {
+		"parameters": [
+			{
+				"name": "token",
+				"type": "String"
+			},
+			{
+				"name": "username",
+				"type": "String"
+			}
+			
+		],
+		"query": "update userdata set reset_password_token = ?,insertionTime = now() where user_name = ?"
+	},
+	"getToken": {
+		"parameters": [
+			{
+				"name": "token",
+				"type": "String"
+			}
+		],
+		"query": "SELECT user_name, reset_password_token FROM userdata WHERE reset_password_token = ?"
+	},
+	"updatePassword": {
+		"parameters": [
+		  {
+				"name": "token",
+				"type": "String"
+			},
+			{
+				"name": "password",
+				"type": "String"
+			},
+			{
+				"name": "username",
+				"type": "String"
+			}
+			
+		],
+		"query": "update userdata set password = crypt(?, gen_salt('bf',10)),reset_password_token = ? where user_name = ?"
+	},
+		"tokenVerification": {
+		 "parameters": [
+			{
+				"name": "token",
+				"type": "String"
+			}
+		],
+		"query": "SELECT * FROM userdata WHERE reset_password_token = ?"
+	},
+		"emailVerification": {
+		 "parameters": [
+			{
+				"name": "username",
+				"type": "String"
+			}
+		],
+		"query": "SELECT * FROM userdata WHERE user_name = ?"
+	},
+	"getDetails": {
+		 "parameters": [
+			{
+				"name": "shgType",
+				"type": "String"
+			}
+	
+		],
+		"query": "select code from customer where shg_type =?"
+	},
+	"uploadFile": {
+		 "parameters": [
+			{
+				"name": "date",
+				"type": "Date"
+			},
+			{
+				"name": "farmerName",
+				"type": "String"
+			},
+			{
+				"name": "product",
+				"type": "String"
+			},
+			{
+				"name": "Sghtype",
+				"type": "String"
+			},
+			{
+				"name": "Sgharea",
+				"type": "String"
+			},
+			{
+				"name": "code",
+				"type": "String"
+			}
+			
+		],
+		"query": "insert into customer(date,product,code,shg_type,farmerName,shg_area,created_on) values(?,?,?,?,?,?,now())ON CONFLICT (date, product, farmername,shg_area) DO UPDATE SET shg_type = EXCLUDED.shg_type,code= EXCLUDED.code"
+	},
+	"getAllDetails": {
+		 "parameters": [
+			
+		],
+		"query": "select * from customer"
+	},
+	"getIndividualDetails": {
+		 "parameters": [
+			{
+				"name": "code",
+				"type": "String"
+			}
+		],
+		"query": "select * from customer where code =?"
+	},
+	"insertQR": {
+		 "parameters": [
+			{
+				"name": "time",
+				"type": "Date"
+			},
+			{
+				"name": "product",
+				"type": "String"
+			},
+			{
+				"name": "shgarea",
+				"type": "String"
+			},
+			{
+				"name": "farmername",
+				"type": "String"
+			},
+			{
+				"name": "qr",
+				"type": "String"
+			},
+			{
+				"name": "a",
+				"type": "String"
+			}
+			
+		],
+		"query": "update customer set qrcode = ?,link = ?  where product = ? and shg_area = ? and date = ? and farmername = ? returning *"
+	},
+	"getCode":{
+		 "parameters": [
+			{
+				"name": "date",
+				"type": "Date"
+			},
+			{
+				"name": "product",
+				"type": "String"
+			},
+			{
+				"name": "shgArea",
+				"type": "String"
+			},
+			{
+				"name": "farmername",
+				"type": "String"
+			}
+			
+			
+		],
+		"query": "select code from customer where date = ? and shg_area = ? and product = ? and farmername = ?"
+	}
+	
+	
+	
+	
+	
+	
+}

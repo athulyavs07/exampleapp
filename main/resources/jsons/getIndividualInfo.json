@@ -1,0 +1,23 @@
+{
+  "parameters":[ 
+  {
+			"name": "code",
+			"type": "String",
+			"validation":[],
+			"nullable":false
+		}
+  
+  
+  ],
+  "functions":[
+    {
+    "params": [
+			 "code"  			
+			],
+      "class":"com.brandanswers.dashboard.funson.PalliyakalManager",
+      "name":"getIndividualDetails",
+      "db":"getIndividualDetails"
+      }
+   
+  ]
+}

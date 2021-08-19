@@ -1,0 +1,50 @@
+{
+	"requests": [
+		{
+			"name": "getUser",
+			"file": "getUser.json"
+		},
+		{
+			"name": "updateToken",
+			"file": "updateToken.json"
+		},
+		{
+			"name": "forgotPassword",
+			"file": "forgotPassword.json"
+		},
+		{
+			"name": "resetPassword",
+			"file": "resetPassword.json"
+		},
+		{
+			"name": "validateToken",
+			"file": "validateToken.json"
+		},
+		{
+			"name": "changePassword",
+			"file": "changePassword.json"
+		},
+		{
+			"name": "emailVerification",
+			"file": "emailVerification.json"
+		},
+		{
+			"name": "uploadFile",
+			"file": "uploadFile.json"
+		},
+		{
+			"name": "getAllInfo",
+			"file": "getAll.json"
+		},
+		{
+			"name": "getIndividualInfo",
+			"file": "getIndividualInfo.json"
+		},
+		{
+			"name": "insertQR",
+			"file": "insertQR.json"
+		}
+				
+					
+]
+}
